@@ -29,23 +29,13 @@ const SearchBar = (props) => {
             onChange={handleSearch}
             type="text"
             placeholder="What do you want to watch today?"
-            className={`md:w-[50rem] h-8 relative px-12  text-left cursor-pointer ${
-              !showBar ? "hidden" : "animate-[bartoleft_1s_ease-in-out]"
-            }`}
+            className={`lg:w-[50rem] h-8 relative px-12  text-left cursor-pointer 
+          animate-[bartoleft_1s_ease-in-out]"`}
           ></input>
-          <GiMagnifyingGlass
-            onClick={(e) => {
-              callSearchFunction(e);
-              showSearchBar();
-            }}
-            className={`relative animate-[appear_1s_ease-in-out] z-20 top-1 left-[-49rem] ${
-              showBar ? "text-black " : "text-white animate-bounce"
-            } text-2xl `}
-          />
         </div>
         <input
           type="submit"
-          className="text-white cursor-pointer"
+          className="text-white cursor-pointer "
           onClick={callSearchFunction}
           value=""
         />

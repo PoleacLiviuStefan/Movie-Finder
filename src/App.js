@@ -32,6 +32,7 @@ function App() {
           setMovies(jsonResponse.Search);
           setLoading(false);
         } else {
+
           setErrorMessage(jsonResponse.Error);
           setLoading(false);
         }
@@ -50,9 +51,9 @@ function App() {
           element={
             <>
               <div className='flex justify-center w-full h-[full] bg-slate-600 py-20'>
-                <div className="relative grid grid-cols-2  top-20">
+                <div className="relative grid md:grid-cols-2 grid-cols-1  top-20">
                   {loading && !errorMessage ? (
-                    <span>loading...</span>
+                    <span className='absolute left-0 md:left-[50%] top-[50%] text-3xl text-white'>loading...</span>
                   ) : errorMessage ? (
                     <div></div>
                   ) : (
@@ -71,11 +72,11 @@ function App() {
         />
 
         {movies && movies.map((movie, index) => (
-          <Route path={`/${movie.Title}`} element={<MovieDescription movie={movie} />} />
+          <Route path={`${movie.Title && movie.Title.split(" ").join('-')}`} element={<MovieDescription movie={movie} />} />
         ))}
 
       </Routes>
-
+      <span className='absolute left-[10%] md:left-[50%] text-white font-bold top-[50%] md:translate-x-[-23rem] text-3xl'>{errorMessage && `SORRY, WE COULDN'T FIND YOUR MOVIE.BE MORE EXPLICIT `}</span>
     </div>
   );
 }
