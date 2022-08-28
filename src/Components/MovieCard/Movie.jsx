@@ -14,7 +14,7 @@ const Movie = ({ movie }) => {
     movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
   const navigate = useNavigate();
   const location = useLocation();
-  let path = movie.Title.split(" ").join("-");
+  let path = movie.Title && movie.Title.split(" ").join("-");
   const showhandler = () => {
     console.log(movie.Title);
     if (location.pathname != `/${path}`) {
