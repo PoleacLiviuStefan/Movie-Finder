@@ -53,7 +53,7 @@ function App() {
               <div className='flex justify-center w-full h-[full] bg-slate-600 py-20'>
                 <div className="relative grid md:grid-cols-2 grid-cols-1  top-20">
                   {loading && !errorMessage ? (
-                    <span className='absolute left-0 md:left-[50%] top-[50%] text-3xl text-white'>loading...</span>
+                    <span ></span>
                   ) : errorMessage ? (
                     <div></div>
                   ) : (
