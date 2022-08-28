@@ -15,7 +15,7 @@ const Movie = ({ movie }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let path = movie.Tile ? movie.Title.split(" ").join("-") : null;
+  let path = movie.Title.split(" ").join("-");
   const showhandler = () => {
     console.log(movie.Title);
     if (location.pathname != `/${path}`) {
