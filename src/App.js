@@ -8,7 +8,7 @@ import MovieDescription from './Components/MovieDescription/MovieDescription';
 import SearchHistory from './Components/SearchHistory/SearchHistory';
 function App() {
   const MovieApi = "http://www.omdbapi.com/?i=tt3896198&apikey=2f732fca";
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([""]);
   const [errorMessage, setErrorMessage] = useState(null);
   useEffect(() => {
