@@ -8,7 +8,7 @@ import MovieDescription from './Components/MovieDescription/MovieDescription';
 import SearchHistory from './Components/SearchHistory/SearchHistory';
 function App() {
   const MovieApi = "http://www.omdbapi.com/?i=tt3896198&apikey=2f732fca";
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([""]);
   const [errorMessage, setErrorMessage] = useState(null);
   useEffect(() => {
@@ -53,7 +53,7 @@ function App() {
               <div className='flex justify-center w-full h-[full] bg-slate-600 py-20'>
                 <div className="relative grid md:grid-cols-2 grid-cols-1  top-20">
                   {loading && !errorMessage ? (
-                    <span ></span>
+                    <span className='absolute left-0 md:left-[50%] top-[50%] text-3xl text-white'>loading...</span>
                   ) : errorMessage ? (
                     <div></div>
                   ) : (
